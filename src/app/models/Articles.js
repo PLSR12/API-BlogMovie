@@ -11,7 +11,7 @@ class Articles extends Model {
         url: {
           type: Sequelize.VIRTUAL,
           get() {
-            return `http://localhost:3001/article-file/${this.path}`
+            return `https://api-blogmovie-production.up.railway.app/article-file/${this.path}`
           },
         },
       },

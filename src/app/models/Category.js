@@ -1,21 +1,21 @@
 import Sequelize, { Model } from 'sequelize'
 
 class Category extends Model {
-  static init (sequelize) {
+  static init(sequelize) {
     super.init(
       {
         name: Sequelize.STRING,
         path: Sequelize.STRING,
         url: {
           type: Sequelize.VIRTUAL,
-          get () {
-            return `http://localhost:3001/category-file/${this.path}`
-          }
-        }
+          get() {
+            return `https://api-blogmovie-production.up.railway.app/category-file/${this.path}`
+          },
+        },
       },
 
       {
-        sequelize
+        sequelize,
       }
     )
     return this
